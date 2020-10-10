@@ -1,5 +1,9 @@
 solution 'JSImpl'
-    configurations {'Debug', 'Release'}
+    if _ACTION ~= 'jcdb' then
+        configurations {'Debug', 'Release'}
+    else
+        configurations {'Debug'}
+    end
     flags {
         'FatalWarnings',
         'ExtraWarnings',
